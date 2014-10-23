@@ -1,0 +1,51 @@
+<div class="wrapper">
+
+<!-- Carousel  -->
+<div ng-controller="CarouselDemoCtrl" id="slides_control">
+    <div >
+    <!-- Carousel images -->
+      <carousel interval="myInterval">
+        <slide style="height:800px " ng-repeat="slide in data" active="slide.active">
+          <img ng-src="{{slide.image_path}}" style="margin:auto;height:305px">
+         
+      <!-- Product Info Header -->      
+     <section style="position:absolute;top:400px;left:150px;" ng-controller="PanelCtrl as panel">
+		<ul class="nav nav-pills">
+			<li ng-class="{ active: panel.isSelected(1)}" style="margin-left:100px">
+				<a href ng-click="panel.selectTab(1)">Product Description</a>
+			</li>
+			<li ng-class="{ active: panel.isSelected(2)}">
+				<a href ng-click="panel.selectTab(2)">Shipping Details</a>
+			</li>
+			<li ng-class="{ active: panel.isSelected(3)}">
+			<a href ng-click="panel.selectTab(3)">Customer Reviews</a>
+			</li>
+		</ul>
+		<!-- Product Info -->
+		<div class="panel" ng-show="panel.isSelected(1)">
+			<h3>Product Description</h3>
+			<p style="width:300px;margin-left:175px;">{{slide.product_description}}</p>
+		</div>
+		<div class="panel" ng-show="panel.isSelected(2)">
+			<h3>Shipping Details</h3>
+			<p style="width:300px;margin-left:175px;">{{slide.shipping_details}}</p>
+		</div>
+		<div class="panel" ng-show="panel.isSelected(3)">
+			<h3>Customer Reviews</h3>
+			<p style="width:300px;margin-left:175px;">{{slide.customer_reviews}}</p>
+		</div>
+	</section>
+			<!-- Purchase button -->
+		<br>
+		<a href="#/order/{{$index}}" class="btn btn-default btn-lrg"
+		 style="position:absolute;left:450px;top:700px"> BUY </a>
+				          
+        </slide>
+      </carousel>
+    </div>
+  </div>
+ 
+ 
+ 
+
+</div>

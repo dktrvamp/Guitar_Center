@@ -1,0 +1,26 @@
+<div ng-controller="myCtrl" class="wrapper">
+
+<div>
+<div style="width:350px;height:300px;margin:10px 0px 0px 50px;float:left;">
+<img ng-src="{{data[data_params].image_path}}" style="width:350px;height:300px;">
+</div>
+<div style="width:500px;height:300px;float:left;position:absolute;top:100px;left:250px;">
+<h3 style="margin-left:200px;">Product Description</h3>
+<br>
+<p style="width:300px;margin-left:175px;float:right;">{{data[data_params].product_description}}</p>
+<button class="btn btn-success" style="cursor:none;">{{data[data_params].price |currency}}</button>
+</div>
+</div>
+<div style="position:absolute;top:400px;left:100px;width:600px;">
+<h5>First Name: <b>{{person.fname}}</b></h5>
+<h5>Last Name: <b>{{person.lname}}</b></h5><br/>
+<h5>Address: <b>{{person.Address}}</b></h5>
+<h5>Zipcode: <b>{{person.zipcode}}</b></h5><br/>
+<h5>Email: <b>{{person.email}}</b></h5>
+<h5>State: <b>{{person.state}}</b></h5> <br/>
+<h5>Credit-Card#: <b>{{person.credit}}</b></h5>
+</div>
+ 
+ 
+ 
+</div>

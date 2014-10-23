@@ -1,0 +1,81 @@
+<div class="wrapper">
+
+<div>
+<div style="width:350px;height:300px;margin:10px 0px 0px 50px;float:left;">
+<img ng-src="{{data[data_params].image_path}}" style="width:350px;height:300px;">
+</div>
+<div style="width:500px;height:300px;float:left;margin:10px 0px 0px 10px">
+<h3 style="float:right;">Product Description</h3>
+<br>
+
+<p style="width:300px;margin-left:175px;float:right;">{{data[data_params].product_description}}</p>
+<button class="btn btn-success" style="cursor:none;">{{data[data_params].price |currency}}</button>
+</div>
+</div>
+<!-- Form input and validation -->
+
+<div name="form" ng-hide="myForm" style="position:relative;top:100px;left:100px;float:left;width:700px;height:400px;">
+	<div style="float:left" class="form-group">
+	<label for="fname">First Name</label>
+	<input ng-model="person.fname" id="fname" class="form-control" style="width:200px;" placeholder="First Name" ng-minlength=1 required/>
+	</div>
+	
+	<div style="position:absolute;top:0px;left:220px;" class="form-group">
+	<label for="lname">Last Name</label>
+	<input ng-model="person.lname" id="lname" class="form-control" style="width:200px;" placeholder="Last Name" required/>
+	</div>
+<br></br>
+	<div style="position:absolute;top:70px;left:0px;" class="form-group">
+	<label for="Address">Address</label>
+	<input ng-model="person.Address" id="Address" class="form-control" style="width:200px;" placeholder="Address" required/>
+	</div>
+	
+	<div style="position:absolute;top:70px;left:220px;" class="form-group">
+	<label for="zip">Zipcode</label>
+	<input ng-model="person.zipcode" type="number" id="zip" class="form-control" style="width:200px;" placeholder="zipcode" ng-minlength="5" required/>
+	</div>
+	<br>
+	<div style="position:absolute;top:150px;left:0px;" class="form-group">
+	<label for="zip">Email</label><br>
+	<input ng-model="person.email" id="zip" style="width:200px;" placeholder="Email" type="email" required/>
+	</div>
+	<label style="position:absolute;top:150px;left:220px;width:200px;">State</label>
+	<select ng-model="person.state" id="state" style="position:absolute;top:176px;left:220px;width:200px;" class="form-control">
+    <option selected="selected" value="Az">Az</option>
+    <option value="Al">Al</option>
+    <option value="Ca">Ca</option>
+    <option value="Pa">PA</option>
+    <option value="Tx">TX</option>
+	</select>
+	<br>
+	<div style="position:absolute;top:250px;left:0px;" class="form-group">
+	<label for="credit">Credit-Card</label>
+	<input ng-model="person.credit" id="credit" class="form-control" style="width:430px;" placeholder="****-****-*****" required/>
+	</div>
+	<br>
+	</div>
+		
+<br>
+<div style="position:absolute;top:750px;left:103px;">	
+<button ng-click="edit_()" ng-hide='edit' class="btn btn-default btn-lrg" >Edit</button>
+<button ng-disabled="!person.fname" ng-hide="review_" ng-click="review()" class="btn btn-danger btn-lrg">Review</button>
+</div>
+<br/>
+<div ng-model="person.confirm" ng-hide="inputfield" style="position:absolute;top:400px;left:100px;width:600px;">
+<h5>First Name: <b>{{person.fname}}</b></h5>
+<h5>Last Name: <b>{{person.lname}}</b></h5><br/>
+<h5>Address: <b>{{person.Address}}, <b>{{person.state}}</b>, <b>{{person.zipcode}}</b></h5><br/>
+<h5>Email: <b>{{person.email}}</b></h5>
+<h5>Credit-Card#: <b>{{person.credit}}</b></h5>
+</div>
+<!-- Form Review is hidden until the go to review button is hit once hit than the form review will show -->
+<div ng-hide="submit_hidden" style="position:absolute;top:820px;left:100px;">
+
+<a href='#/confirmation/{{data_params}}/'
+ class="btn btn-success btn-lrg"  ng-disabled="inputForm.$invalid">Submit</a>
+</div>
+<br/>
+<!-- go back home button -->
+
+
+</div>

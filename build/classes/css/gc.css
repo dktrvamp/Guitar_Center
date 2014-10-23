@@ -1,0 +1,17 @@
+.wrapper{
+	width:960px;
+	height:1200px;
+	margin:auto;
+	border:1px solid black;
+}
+
+.nav{
+	width:660px;
+	margin:auto;
+	border:0px solid red;
+}
+
+.btn{
+	margin-right:15px;
+	float:right;
+}
